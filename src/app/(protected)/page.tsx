@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import WishlistApp from "@/components/WishlistApp";
+import WishlistApp from "@/components/wishlist/WishlistApp";
 import type { Item } from "@/lib/types";
 
 export default async function HomePage() {

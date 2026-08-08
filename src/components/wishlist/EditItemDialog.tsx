@@ -1,6 +1,6 @@
 "use client";
 
-import Modal from "./Modal";
+import Modal from "@/components/ui/Modal";
 import ItemForm, { type ItemFormValues } from "./ItemForm";
 import { updateItem } from "@/app/actions";
 import type { Item } from "@/lib/types";

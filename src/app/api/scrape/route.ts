@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
-import { safeFetchHtml } from "@/lib/safeFetch";
-import { parseOpenGraph } from "@/lib/scrape";
-import { checkRateLimit } from "@/lib/rateLimit";
+import { safeFetchHtml } from "@/lib/scraping/safeFetch";
+import { parseOpenGraph } from "@/lib/scraping/scrape";
+import { checkRateLimit } from "@/lib/scraping/rateLimit";
 
 const EMPTY_RESULT = { title: null, image: null, price: null, currency: "BRL" };
 

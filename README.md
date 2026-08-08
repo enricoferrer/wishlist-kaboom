@@ -51,21 +51,25 @@ Abra [http://localhost:3000](http://localhost:3000) — você será redirecionad
 ## Estrutura
 
 ```
-/app
-  /login/page.tsx            -- tela de login (Google OAuth)
-  /auth/callback/route.ts    -- troca o código OAuth por sessão
-  /(protected)/page.tsx      -- tela principal (lista de itens)
-  /api/scrape/route.ts       -- scraping SSRF-safe de Open Graph
-  actions.ts                 -- server actions (CRUD de items)
-/components                  -- UI (cards, modais, formulário)
-/lib
-  /supabase                  -- clients Supabase (browser/server)
-  scrape.ts                  -- parsing de Open Graph
-  safeFetch.ts / ssrf.ts     -- fetch protegido contra SSRF
-  rateLimit.ts                -- rate limit best-effort do /api/scrape
-proxy.ts                     -- protege rotas fora de /login e /auth
-supabase/migrations/         -- schema SQL + RLS
+/src
+  /app
+    /login/page.tsx              -- tela de login (Google OAuth)
+    /auth/callback/route.ts      -- troca o código OAuth por sessão
+    /(protected)/page.tsx        -- tela principal (lista de itens)
+    /api/scrape/route.ts         -- endpoint de scraping SSRF-safe
+    actions.ts                   -- server actions (CRUD de items)
+  /components
+    /ui                          -- componentes genéricos reutilizáveis (Modal)
+    /wishlist                    -- componentes da feature (lista, cards, formulário, diálogos)
+  /lib
+    /supabase                    -- clients Supabase (browser/server)
+    /scraping                    -- scrape.ts, safeFetch.ts, ssrf.ts, rateLimit.ts
+    types.ts                     -- tipos compartilhados (Item, List)
+  proxy.ts                       -- protege rotas fora de /login e /auth
+supabase/migrations/             -- schema SQL + RLS
 ```
+
+O alias `@/*` aponta para `src/*` (configurado em `tsconfig.json`).
 
 ## Limitações conhecidas do MVP
 
