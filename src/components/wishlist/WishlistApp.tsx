@@ -47,14 +47,14 @@ export default function WishlistApp({ initialItems }: { initialItems: Item[] }) 
         <div className="flex items-center gap-3">
           <button
             onClick={() => setAddOpen(true)}
-            className="rounded-full bg-black px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
+            className="rounded-full bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
           >
             + Adicionar item
           </button>
           <form action={signOut}>
             <button
               type="submit"
-              className="text-sm text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-200"
+              className="text-sm text-zinc-500 transition-colors hover:text-zinc-800 dark:hover:text-zinc-200"
             >
               Sair
             </button>

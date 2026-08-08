@@ -40,7 +40,7 @@ export default function ItemCard({
           href={item.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="truncate text-xs text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
+          className="truncate text-xs text-zinc-400 transition-colors hover:text-zinc-600 dark:hover:text-zinc-300"
         >
           Ver no site original
         </a>
@@ -48,17 +48,20 @@ export default function ItemCard({
         <div className="mt-2 flex flex-wrap gap-3 text-xs">
           <button
             onClick={onTogglePurchased}
-            className="font-medium text-zinc-600 hover:underline dark:text-zinc-300"
+            className="font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white"
           >
             {item.status === "active" ? "Marcar como comprado" : "Marcar como ativo"}
           </button>
           <button
             onClick={onEdit}
-            className="font-medium text-zinc-600 hover:underline dark:text-zinc-300"
+            className="font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white"
           >
             Editar
           </button>
-          <button onClick={onDelete} className="font-medium text-red-600 hover:underline">
+          <button
+            onClick={onDelete}
+            className="font-medium text-red-600 transition-colors hover:text-red-700 dark:text-red-500 dark:hover:text-red-400"
+          >
             Excluir
           </button>
         </div>

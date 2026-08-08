@@ -27,7 +27,7 @@ export default function Modal({
           <button
             onClick={onClose}
             aria-label="Fechar"
-            className="text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200"
+            className="text-zinc-400 transition-colors hover:text-zinc-700 dark:hover:text-zinc-200"
           >
             ✕
           </button>
