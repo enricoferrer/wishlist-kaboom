@@ -160,7 +160,7 @@ export default function WishlistApp({ initialItems }: { initialItems: Item[] }) 
             </span>
             <p className="max-w-xs text-sm text-muted">
               {tab === "active"
-                ? "Nenhum item ainda. Cole o link de um produto que você quer e comece sua lista dos sonhos."
+                ? "Nenhum item ainda. Cole o link de um produto que você quer e comece sua wishlist!"
                 : "Nenhum item comprado ainda. Quando marcar algo como comprado, ele aparece aqui."}
             </p>
             {tab === "active" ? (

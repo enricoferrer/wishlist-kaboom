@@ -65,8 +65,7 @@ export default function LoginPage() {
             Wishlist Kaboom
           </h1>
           <p className="mx-auto mt-3 max-w-xs text-sm text-muted">
-            Cole o link de um produto e guarde nome, imagem e preço num só lugar — sua lista de
-            desejos, sempre à mão.
+            Sua lista de desejos sempre em um só lugar!
           </p>
         </div>
 
