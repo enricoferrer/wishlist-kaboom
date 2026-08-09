@@ -11,7 +11,7 @@ export interface ItemFormValues {
 }
 
 const inputClass =
-  "rounded-lg border border-zinc-300 px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-800";
+  "rounded-xl border border-border bg-surface-2 px-3 py-2 text-sm text-foreground outline-none transition-colors focus:border-primary";
 
 export default function ItemForm({
   initialValues,
@@ -48,14 +48,14 @@ export default function ItemForm({
         <img
           src={values.image_url}
           alt=""
-          className="h-40 w-full rounded-lg bg-zinc-50 object-contain dark:bg-zinc-800"
+          className="h-40 w-full rounded-xl bg-surface-2 object-contain"
           onError={(e) => {
             e.currentTarget.style.display = "none";
           }}
         />
       ) : null}
 
-      <label className="flex flex-col gap-1 text-sm">
+      <label className="flex flex-col gap-1 text-sm font-medium">
         Link do produto
         <input
           type="url"
@@ -66,7 +66,7 @@ export default function ItemForm({
         />
       </label>
 
-      <label className="flex flex-col gap-1 text-sm">
+      <label className="flex flex-col gap-1 text-sm font-medium">
         Nome
         <input
           type="text"
@@ -77,7 +77,7 @@ export default function ItemForm({
         />
       </label>
 
-      <label className="flex flex-col gap-1 text-sm">
+      <label className="flex flex-col gap-1 text-sm font-medium">
         Imagem (URL)
         <input
           type="url"
@@ -89,7 +89,7 @@ export default function ItemForm({
       </label>
 
       <div className="flex gap-3">
-        <label className="flex flex-1 flex-col gap-1 text-sm">
+        <label className="flex flex-1 flex-col gap-1 text-sm font-medium">
           Preço
           <input
             type="number"
@@ -101,7 +101,7 @@ export default function ItemForm({
             className={inputClass}
           />
         </label>
-        <label className="flex w-24 flex-col gap-1 text-sm">
+        <label className="flex w-24 flex-col gap-1 text-sm font-medium">
           Moeda
           <input
             type="text"
@@ -117,14 +117,14 @@ export default function ItemForm({
         <button
           type="button"
           onClick={onCancel}
-          className="rounded-full px-4 py-2 text-sm font-medium text-zinc-600 transition-colors hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
+          className="rounded-full px-4 py-2 text-sm font-semibold text-muted transition-colors hover:bg-surface-2 hover:text-foreground"
         >
           Cancelar
         </button>
         <button
           type="submit"
           disabled={isSaving}
-          className="rounded-full bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-zinc-800 disabled:opacity-50 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
+          className="rounded-full bg-gradient-cta px-4 py-2 text-sm font-semibold text-primary-fg shadow-glow transition-transform hover:scale-[1.03] active:scale-95 disabled:opacity-50 disabled:hover:scale-100"
         >
           {isSaving ? "Salvando…" : submitLabel}
         </button>

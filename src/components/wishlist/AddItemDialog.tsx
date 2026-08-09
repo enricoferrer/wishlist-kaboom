@@ -65,9 +65,21 @@ export default function AddItemDialog({
 
   return (
     <Modal title="Adicionar item" onClose={onClose}>
+      <div className="mb-4 flex items-center gap-2 text-xs font-semibold text-muted">
+        <span className={`flex h-5 w-5 items-center justify-center rounded-full ${step === "url" ? "bg-gradient-cta text-primary-fg" : "bg-success text-white"}`}>
+          1
+        </span>
+        <span className={step === "url" ? "text-foreground" : ""}>Link</span>
+        <span className="h-px flex-1 bg-border" />
+        <span className={`flex h-5 w-5 items-center justify-center rounded-full ${step === "form" ? "bg-gradient-cta text-primary-fg" : "bg-surface-2"}`}>
+          2
+        </span>
+        <span className={step === "form" ? "text-foreground" : ""}>Detalhes</span>
+      </div>
+
       {step === "url" ? (
         <form onSubmit={handleUrlSubmit} className="flex flex-col gap-4">
-          <label className="flex flex-col gap-1 text-sm">
+          <label className="flex flex-col gap-1 text-sm font-medium">
             Cole o link do produto
             <input
               type="url"
@@ -76,21 +88,21 @@ export default function AddItemDialog({
               value={url}
               onChange={(e) => setUrl(e.target.value)}
               placeholder="https://..."
-              className="rounded-lg border border-zinc-300 px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-800"
+              className="rounded-xl border border-border bg-surface-2 px-3 py-2 text-sm text-foreground outline-none transition-colors focus:border-primary"
             />
           </label>
           <div className="mt-2 flex justify-end gap-3">
             <button
               type="button"
               onClick={onClose}
-              className="rounded-full px-4 py-2 text-sm font-medium text-zinc-600 transition-colors hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
+              className="rounded-full px-4 py-2 text-sm font-semibold text-muted transition-colors hover:bg-surface-2 hover:text-foreground"
             >
               Cancelar
             </button>
             <button
               type="submit"
               disabled={isLoading}
-              className="rounded-full bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-zinc-800 disabled:opacity-50 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
+              className="rounded-full bg-gradient-cta px-4 py-2 text-sm font-semibold text-primary-fg shadow-glow transition-transform hover:scale-[1.03] active:scale-95 disabled:opacity-50 disabled:hover:scale-100"
             >
               {isLoading ? "Buscando…" : "Buscar informações"}
             </button>
